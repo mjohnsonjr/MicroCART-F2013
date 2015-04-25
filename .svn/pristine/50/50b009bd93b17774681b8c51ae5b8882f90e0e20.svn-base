@@ -1,0 +1,45 @@
+/*
+ * CLI.h
+ *
+ *  Created on: Feb 5, 2014
+ *      Author: Michael Johnson
+ */
+
+#ifndef CLI_H_
+#define CLI_H_
+
+
+#include "Transmitter.h"
+#include "CommandInterpreter.h"
+#include "Locator.h"
+
+/*
+ *
+ */
+class CLI {
+public:
+	CLI(const std::string&, const std::string&);
+	virtual ~CLI();
+	bool start();
+	bool stop();
+	void mainloop();
+
+	inline bool is_started(){
+		return this->running;
+	}
+
+
+private:
+	Transmitter* transmitter;
+	CommandInterpreter* interpreter;
+	pthread_t main_thread;
+
+	bool running;
+
+#ifdef CAMERA_DATA
+	CameraLocation* locator;
+#endif
+
+};
+
+#endif /* CLI_H_ */

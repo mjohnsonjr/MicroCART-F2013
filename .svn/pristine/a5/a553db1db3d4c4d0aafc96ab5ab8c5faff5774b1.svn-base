@@ -1,0 +1,52 @@
+/*
+ * Transmitter.h
+ *
+ *  Created on: Jan 30, 2014
+ *      Author: Michael Johnson
+ */
+
+#ifndef TRANSMITTOR_H_
+#define TRANSMITTOR_H_
+#include <string>
+#include "QuadCommand.h"
+
+class Transmitter {
+
+public:
+	Transmitter(const std::string&);
+
+	int getFd(){
+		return this->fd;
+	}
+
+	void enableTx(){
+		this->tx = true;
+	}
+	void enableRx(){
+		this->rx = true;
+	}
+	void disableTx(){
+		this->tx = false;
+	}
+	void disableRx(){
+		this->rx = false;
+	}
+
+	bool txEnabled(){
+		return this->tx;
+	}
+
+	bool rxEnabled(){
+		return this->rx;
+	}
+
+	bool transmitCommand(QuadCommand&);
+	virtual ~Transmitter();
+
+private:
+	int fd;
+	bool tx;
+	bool rx;
+};
+
+#endif /* TRANSMITTER_H_ */

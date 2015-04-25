@@ -1,0 +1,16 @@
+#include "mainwindow.h"
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+
+    /* Setup enclosed CLI */
+    CLI* contained_cli_ptr = new CLI("/dev/ttyUSB0","192.168.0.120:3883");
+    w.setCLI(contained_cli_ptr);
+
+    w.show();
+
+    return a.exec();
+}

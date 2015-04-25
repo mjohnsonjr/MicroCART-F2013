@@ -1,0 +1,37 @@
+/*
+ * CommandInterpreter.h
+ *
+ *  Created on: Jan 23, 2014
+ *      Author: michael
+ */
+
+#ifndef COMMANDINTERPRETER_H_
+#define COMMANDINTERPRETER_H_
+
+#include "QuadCommand.h"
+#include <iostream>
+#include <vector>
+
+class CommandInterpreter{
+
+	private:
+		QuadCommand command;
+
+	public:
+		CommandInterpreter();
+		virtual ~CommandInterpreter();
+
+		bool interpret(const std::string&);
+		QuadCommand& getQuadCommand() {
+			return this->command;
+		}
+
+		const QuadCommand& getQuadCommand() const {
+			return this->command;
+		}
+
+};
+
+
+
+#endif /* COMMANDINTERPRETER_H_ */

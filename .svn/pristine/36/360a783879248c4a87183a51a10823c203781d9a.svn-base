@@ -1,0 +1,12 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.debug.ui,3.4.2.v20090110_r342,org.eclipse.debug.ui,1386105213179
+stopped,bundle,org.eclipse.ui.editors,3.4.0.v20080603-2000,org.eclipse.ui.editors,1386105213179
+stopped,bundle,org.eclipse.epp.usagedata.ui,1.0.1.R200809220400,org.eclipse.epp.usagedata.ui,1386105213180
+stopped,bundle,org.eclipse.ui.intro.universal,3.2.200.v20080508,org.eclipse.ui.intro.universal,1386105213180
+stopped,bundle,org.eclipse.ui.intro,3.2.201.v20080702_34x,org.eclipse.ui.intro,1386105213182
+stopped,bundle,org.eclipse.ui.navigator.resources,3.3.101.M20080910-0800,org.eclipse.ui.navigator.resources,1386105213182
+stopped,bundle,org.eclipse.ui.net,1.0.0.I20080605,org.eclipse.ui.net,1386105213182
+stopped,bundle,org.eclipse.ui.presentations.r21,3.2.100.I20080512-2000,org.eclipse.ui.presentations.r21,1386105213183
+stopped,bundle,org.eclipse.ui.console,3.3.1.v20090128_r342,org.eclipse.ui.console,1386105213183
+stopped,bundle,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.workbench.texteditor,1386105213183
+stopped,bundle,org.eclipse.update.scheduler,3.2.100.v20080404,org.eclipse.update.scheduler,1386105213183

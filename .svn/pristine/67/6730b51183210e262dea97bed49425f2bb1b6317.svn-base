@@ -1,0 +1,27 @@
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "src/CLI.h"
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::on_pushButton_toggled(bool checked)
+{
+    if(checked == true){
+        cli.start();
+        ui->startButton->setText("STOP");
+    }
+    else{
+        cli.stop();
+        ui->startButton->setText("STOP");
+    }
+}

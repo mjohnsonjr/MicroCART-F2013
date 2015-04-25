@@ -1,0 +1,21 @@
+/*
+ * Locator.h
+ *
+ *  Created on: Jan 26, 2014
+ *      Author: michael
+ */
+
+#ifndef LOCATOR_H_
+#define LOCATOR_H_
+
+
+class CameraLocation{
+
+	/* Vars */
+
+	/*Get/set*/
+
+};
+
+
+#endif /* LOCATOR_H_ */

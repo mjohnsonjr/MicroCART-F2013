@@ -1,0 +1,65 @@
+/*
+ * QuadCommand.cpp
+ *
+ *  Created on: Jan 23, 2014
+ *      Author: michael
+ */
+
+#include "QuadCommmand.h"
+#include <cstdlib>
+#include <iostream>
+
+	QuadCommand::QuadCommand(){
+		this->action = -1;
+	}
+	QuadCommand::~QuadCommand(){}
+
+	QuadCommand::QuadCommand(const struct QuadCommand& other){
+		this->action = other.action;
+		this->values = other.values;
+	}
+
+//	QuadCommand& operator=(const QuadCommand& other){
+//		this->action = other.action;
+//		this->values = other.values;
+//	    return *this;
+//	}
+
+
+
+/* Packs the QuadCommand into a byte array to be transmitted. */
+char* QuadCommand::pack(){
+
+	/* hacky conversion */
+	int i;
+
+	char* packed = new char[values.size() * sizeof(float) + 2];
+	packed[0] = this->action;
+
+	for(i = 0; i < values.size(); i+=sizeof(float)){
+		packed[i + 1] = values[i];
+	}
+	packed[i + 1] = -128;
+
+	return packed;
+}
+
+/**
+ * Unpackes a packed QuadCommand. (Not sure if this is really necessary beyond debugging).
+ */
+struct QuadCommand QuadCommand::unpack(char* packed){
+
+	int i = 0;
+	struct QuadCommand quad;
+
+	quad.action = packed[0];
+
+	while(packed[i] != -128){
+		quad.values.push_back((float)packed[i]);
+		i+=sizeof(float);
+	}
+
+	return quad;
+}
+
+

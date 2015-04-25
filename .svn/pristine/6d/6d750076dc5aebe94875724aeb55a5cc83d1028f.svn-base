@@ -1,0 +1,99 @@
+/*
+ * Transmittor.cpp
+ *
+ *  Created on: Jan 30, 2014
+ *      Author: michael
+ */
+
+#include "Transmitter.h"
+#include "QuadCommand.h"
+#include <sys/fcntl.h> /* File control definitions */
+#include <sys/termios.h>
+#include <termios.h> /* POSIX terminal control definitions */
+#include <unistd.h> /* UNIX standard function definitions */
+#include <cstdlib>
+#include <string>
+#include <cerrno> /* Error number definitions */
+#include <cstdio>
+#include <string>
+#include <iostream>
+
+
+/**
+ * Transmitter constructor.  Sets up a new transmitter object with the specified path
+ * as a file pointer (e.g. ttyS0).
+ * @param path Path (file-pointer) to write transmitted data.
+ */
+Transmitter::Transmitter(std::string path) {
+
+	this->tx = false;
+	this->rx = false;
+	  this->fd = open(path.c_str(), O_RDWR | O_NDELAY);
+	  //fd = open("/dev/ttyS0", O_RDWR | O_NOCTTY | O_NDELAY);
+
+	  if (fd == -1)
+	  {
+	    //Could not open the port.
+	    perror("open_port: Unable to open /dev/ttyS0 - ");
+	    exit(1);
+	  }
+	  else
+	  {
+	  	fcntl(fd, F_SETFL, 0);
+	  }
+
+	  /* SET OPTIONS */
+	  	struct termios options; // UART port options data structure
+	    // Get the current options for the port...
+	    tcgetattr(fd, &options);
+	    // Set the baud rates to 115200...
+	    cfsetispeed(&options, B19200); //B115200
+	    cfsetospeed(&options, B19200);
+	    // Enable the receiver and set local mode...
+	    options.c_cflag |= (CLOCAL | CREAD);
+	    // Set charater size
+	    options.c_cflag &= ~CSIZE; // Mask the character size bits
+	    options.c_cflag |= CS8;    // Select 8 data bits
+	    // Set no parity 8N1
+	    options.c_cflag &= ~PARENB;
+	    options.c_cflag &= ~CSTOPB;
+	    options.c_cflag &= ~CSIZE;
+	    options.c_cflag |= CS8;
+	    // Disable Hardware flow control
+	    options.c_cflag &= ~CRTSCTS;
+	    // Use raw input
+	    options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
+	    // Disable SW flow control
+	    options.c_iflag &= ~(IXON | IXOFF | IXANY);
+	    // Use raw output
+	    options.c_oflag &= ~OPOST;
+	    // Set new options for the port...
+	    tcsetattr(fd, TCSANOW, &options);
+}
+
+Transmitter::~Transmitter(){}
+
+/**
+ *  Writes command to UART.
+ *
+ *	@param data The QuadCommand object containing the command to be executed.
+ * 	@return True on successful transmission of all data, false otherwise.
+ */
+bool Transmitter::transmitCommand(QuadCommand& data){
+
+	if(this->tx == false){
+		return false;
+	}
+	const char* bytedata = (char*) data.getPacket();
+
+	char start_byte = -1;
+	short n = write(this->fd, &start_byte, 1); /* Start byte */
+	n = write(this->fd, bytedata, data.getPacketSize());
+//	for(auto i = 0; i < data.getPacketSize()/*10*/; i++){
+//		n = write(this->fd, (char*)bytedata++, 1);
+//	}
+	//usleep(500000);
+	return n == data.getPacketSize() ? true : false;
+}
+
+

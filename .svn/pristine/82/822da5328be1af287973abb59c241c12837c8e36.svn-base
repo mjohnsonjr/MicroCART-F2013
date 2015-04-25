@@ -1,0 +1,26 @@
+/*
+ * QuadCommmand.h
+ *
+ *  Created on: Jan 23, 2014
+ *      Author: michael
+ */
+
+#include <vector>
+
+#ifndef QUADCOMMMAND_H_
+#define QUADCOMMMAND_H_
+
+struct QuadCommand{
+	char action;
+	std::vector<float> values;
+
+	char* pack();
+	static struct QuadCommand unpack(char*);
+
+	QuadCommand();
+	~QuadCommand();
+	QuadCommand(const struct QuadCommand&);
+};
+
+
+#endif /* QUADCOMMMAND_H_ */

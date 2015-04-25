@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="18" version="2.0">
+<workbenchAdvisor/>
+<window height="1000" maximized="true" width="1028" x="665" y="25">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="136" y="28"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="154" y="28"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="118" y="28"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="102" y="28"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="38" y="28"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="182" y="28"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1395881502729" focus="true" label="Workspace - Nios II">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world.c" partName="hello_world.c" path="/home/ucart/Desktop/microcart-f2013/BasicPrograms/LABET_SYSTEM/sw/LABET_SW_PROJECT/hello_world.c" title="hello_world.c" tooltip="LABET_SW_PROJECT/hello_world.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LABET_SW_PROJECT/hello_world.c"/>
+<editorState selectionLength="0" selectionOffset="8771"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="camerasystem.c" partName="camerasystem.c" path="/home/ucart/Desktop/microcart-f2013/BasicPrograms/LABET_SYSTEM/sw/LABET_SW_PROJECT/camerasystem.c" title="camerasystem.c" tooltip="LABET_SW_PROJECT/camerasystem.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LABET_SW_PROJECT/camerasystem.c"/>
+<editorState selectionLength="0" selectionOffset="12157"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="bluetoothController.c" partName="bluetoothController.c" path="/home/ucart/Desktop/microcart-f2013/BasicPrograms/LABET_SYSTEM/sw/LABET_SW_PROJECT/bluetoothController.c" title="bluetoothController.c" tooltip="LABET_SW_PROJECT/bluetoothController.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LABET_SW_PROJECT/bluetoothController.c"/>
+<editorState selectionLength="11" selectionOffset="6450"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="kalmanfilter.c" partName="kalmanfilter.c" path="/home/ucart/Desktop/microcart-f2013/BasicPrograms/LABET_SYSTEM/sw/LABET_SW_PROJECT/kalmanfilter.c" title="kalmanfilter.c" tooltip="LABET_SW_PROJECT/kalmanfilter.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LABET_SW_PROJECT/kalmanfilter.c"/>
+<editorState selectionLength="0" selectionOffset="325"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" CommonNavigator.LINKING_ENABLED.delayed="0" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List"/>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
+<columnWidths org.eclipse.ui.ide.completionField="40" org.eclipse.ui.ide.descriptionField="303" org.eclipse.ui.ide.locationField="63" org.eclipse.ui.ide.markerType="814" org.eclipse.ui.ide.pathField="123" org.eclipse.ui.ide.priorityField="19" org.eclipse.ui.ide.resourceField="93"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.completionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.priorityField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.descriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.altera.sbtgui.ui.cPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<perspective_action id="org.eclipse.cdt.ui.CPerspective"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.internal.introview"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1b5eba4" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="1">&#x0A;<page content="org.eclipse.ui.internal.introview" label="Welcome"/>
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.6599064" ratioLeft="423" ratioRight="218" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.49921995" ratioLeft="320" ratioRight="321" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.altera.sbtgui.ui.Nios2CPerspectiveFactory" id="com.altera.sbtgui.ui.cPerspective" label="Nios II"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.SearchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.CElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.cdt.ui.CView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView"/>
+<new_wizard_action id="com.altera.sbtgui.ui.newSoftwareExample"/>
+<new_wizard_action id="com.altera.sbtgui.ui.newApplication"/>
+<new_wizard_action id="com.altera.sbtgui.ui.newBsp"/>
+<new_wizard_action id="com.altera.sbtgui.ui.newLibrary"/>
+<perspective_action id="com.altera.sbtgui.ui.debugPerspective"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.cdt.ui.CView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@74b10b" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.21030557" ratioLeft="351" ratioRight="1318" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.71935856" ratioLeft="628" ratioRight="245" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:10USB-Blaster [USB 3-1.2]" label="Nios II Console"/>
+<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="topRight" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LABET_SW_PROJECT/hello_world.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LABET_SW_PROJECT/camerasystem.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LABET_SW_PROJECT/bluetoothController.c"/>
+</editors>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="bluetoothController.c" index="2">
+<position info="not_deleted" x="6450" y="11"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="bluetoothController.c" index="2">
+<position info="not_deleted" x="6450" y="11"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="1362" y="0"/>
+</item>
+<item historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+<item historyLabel="camerasystem.c" index="1">
+<position info="not_deleted" x="12157" y="0"/>
+</item>
+<item active="true" historyLabel="hello_world.c" index="0">
+<position info="not_deleted" x="13662" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="topLeft"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="bottom"/>
+<trimItem IMemento.internal.id="topRight"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="kalmanfilter.c" tooltip="LABET_SW_PROJECT/kalmanfilter.c">
+<persistable path="/LABET_SW_PROJECT/kalmanfilter.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="bluetoothController.c" tooltip="LABET_SW_PROJECT/bluetoothController.c">
+<persistable path="/LABET_SW_PROJECT/bluetoothController.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="camerasystem.c" tooltip="LABET_SW_PROJECT/camerasystem.c">
+<persistable path="/LABET_SW_PROJECT/camerasystem.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="estimationtest.c" tooltip="LABET_SW_PROJECT/estimationtest.c">
+<persistable path="/LABET_SW_PROJECT/estimationtest.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world.c" tooltip="LABET_SW_PROJECT/hello_world.c">
+<persistable path="/LABET_SW_PROJECT/hello_world.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="altera_avalon_timer.h" tooltip="LABET_SW_PROJECT_bsp/drivers/inc/altera_avalon_timer.h">
+<persistable path="/LABET_SW_PROJECT_bsp/drivers/inc/altera_avalon_timer.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="estimationtest.h" tooltip="LABET_SW_PROJECT/estimationtest.h">
+<persistable path="/LABET_SW_PROJECT/estimationtest.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world.h" tooltip="LABET_SW_PROJECT/hello_world.h">
+<persistable path="/LABET_SW_PROJECT/hello_world.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="controls.c" tooltip="LABET_SW_PROJECT/controls.c">
+<persistable path="/LABET_SW_PROJECT/controls.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="controls.h" tooltip="LABET_SW_PROJECT/controls.h">
+<persistable path="/LABET_SW_PROJECT/controls.h"/>
+</file>
+</mruList>
+</workbench>

@@ -1,0 +1,39 @@
+/*
+ * Locator.h
+ *
+ *  Created on: Jan 26, 2014
+ *      Author: michael
+ */
+
+#include <vrpn_Tracker.h>
+#include <vrpn_Connection.h>
+#include "CommandInterpreter.h"
+#include "Transmitter.h"
+
+
+#ifndef LOCATOR_H_
+#define LOCATOR_H_
+
+
+class CameraLocation{
+
+	public:
+		CameraLocation(const std::string, CommandInterpreter&, Transmitter&);
+
+		virtual ~CameraLocation();
+		bool startTracking();
+		void track();
+		bool stopTracking();
+
+		void CameraLoop();
+		void VRPN_CALLBACK handleLocation(const vrpn_TRACKERCB&);
+
+	private:
+		vrpn_Connection *connection;
+		vrpn_Tracker_Remote *tracker;
+		pthread_t thread;
+		CommandInterpreter& interpreter;
+		Transmitter& transmitter;
+};
+
+#endif /* LOCATOR_H_ */

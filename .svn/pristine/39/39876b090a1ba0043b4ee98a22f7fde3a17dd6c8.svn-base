@@ -1,0 +1,200 @@
+/*
+ * new_main.c
+ *
+ *  Created on: Oct 24, 2013
+ *      Author: ucart
+ */
+#include <system.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stddef.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <math.h>
+#include <alt_types.h>
+#include <sys/alt_timestamp.h>
+#include <sys/time.h>
+#include "labet.h"
+#include "imu.h"
+#include "ars.h"
+#include "ping.h"
+//Number of lines that we want to collect
+#define NUM_SENSOR_VALUES 100
+//The size of the buffer that we are going to be reading from
+#define READ_BUFFER_SIZE 10
+
+int main()
+{
+	char readBuffer[READ_BUFFER_SIZE];
+	int numRead = 0;
+	alt_16 gyroAccelDATAToSend[NUM_SENSOR_VALUES*20] = {0};
+	int wantData = 0;
+	//The time when we begin collecting the line
+	alt_timestamp_type kalmanBeginTime;
+	//The time when the line has been collected
+	alt_timestamp_type kalmanEndTime;
+	int numSend;
+	int i;
+	//Holds the timestamp that we send over
+	float times[NUM_SENSOR_VALUES];
+	//Number of bytes that we sent over
+	//The bluetooth file descriptor
+	int fd;
+	// File poiner to uart_0 phjones added
+	FILE *fp;
+
+	// Open file for read and write
+	fp = fopen("/dev/uart_0", "r+");
+
+	/*-------------------------------------------
+	 Set input to be nonblocking
+	 -------------------------------------------*/
+	fd = fileno(fp);
+	fcntl(fd, F_SETFL, O_NONBLOCK);
+
+	//If the file could be opened print opened as well as the file descriptor
+	if (fd != 0) {
+		printf("new main opened file!=%d\n\r", fd);
+	}
+	//Otherwise it was not able to be opend
+	else {
+		printf("NOT opened :-( \n\r");
+	}
+
+	//Start the timestamp
+	alt_timestamp_start();
+	if (alt_timestamp_start() < 0) {
+		printf("No timestamp device available\n");
+	}
+
+	for(i = 0; i < 2000; i++){
+		gyroAccelDATAToSend[i] = i;
+	}
+
+	while(1){
+		while (wantData == 0) {
+		/*-------------------------------------------
+		 Nonblocking read: returns 0 if nothing there
+		 -------------------------------------------*/
+			numRead = read(fd, readBuffer, READ_BUFFER_SIZE - 1);
+			//If something is read
+			if (numRead > 0) {
+				//Print out what was read, if it was an a set wantData to true
+				//so we leave this while loop
+				printf("Read %c", readBuffer[0]);
+				if (readBuffer[0] == 'a') {
+					printf("Read a\n");
+					wantData = 1;
+				}
+			}
+		}
+
+		//Gather the data for NUM_SENSOR_VALUES times
+		for (i = 0; i < NUM_SENSOR_VALUES; i++) {
+			//printf("%d\n", currentHeliState.gyroX);
+			//Set the timestamp to 0
+			kalmanBeginTime = alt_timestamp_start();
+			//If the timestamp is not available print this out
+			if (kalmanBeginTime < 0) {
+				printf("No timestamp device available\n");
+			}
+			//Set the timestamp to 0
+			//kalmanBeginTime = alt_timestamp_start();
+			//If the timestamp is not available print this out
+			//if (kalmanBeginTime < 0) {
+			//	printf("No timestamp device available\n");
+			//}
+			/*-------------------------------------------
+			 Get IMU data
+			 -------------------------------------------*/
+			readUsefulIMU(); // phjones removed LWMULKEY ADDED
+			/*-------------------------------------------
+			 Load the IMU data into the buffer to be sent
+			 away from board.
+			 -------------------------------------------*/
+			//wait(1);
+			gyroAccelDATAToSend[1 + i * 10] = currentHeliState.gyroX;
+			gyroAccelDATAToSend[2 + i * 10] = currentHeliState.gyroY;
+			gyroAccelDATAToSend[3 + i * 10] = currentHeliState.gyroZ;
+			gyroAccelDATAToSend[4 + i * 10] = currentHeliState.accelX;
+			gyroAccelDATAToSend[5 + i * 10] = currentHeliState.accelY;
+			gyroAccelDATAToSend[6 + i * 10] = currentHeliState.accelZ;
+			gyroAccelDATAToSend[7 + i * 10] = currentHeliState.magX;
+			gyroAccelDATAToSend[8 + i * 10] = currentHeliState.magY;
+			gyroAccelDATAToSend[9 + i * 10] = currentHeliState.magZ;
+			/** This is for testing purposes
+			gyroAccelDATAToSend[1 + i * 10] = i;
+			gyroAccelDATAToSend[2 + i * 10] = i;
+			gyroAccelDATAToSend[3system library properties + i * 10] = i;
+			gyroAccelDATAToSend[4 + i * 10] = i;
+			gyroAccelDATAToSend[5 + i * 10] = i;
+			gyroAccelDATAToSend[6 + i * 10] = i;
+			gyroAccelDATAToSend[7 + i * 10] = i;
+			gyroAccelDATAToSend[8 + i * 10] = i;
+			gyroAccelDATAToSend[9 + i * 10] = i;**/
+			//End the timestamp to get the end time
+			//kalmanEndTime = alt_timestamp();
+			//The timestamp is taken in ms
+			//my_stamp = ((kalmanEndTime - kalmanBeginTime) * 20.0)/ 1000000;  // pjones  ROOT CAUSE
+			//times[i] = my_stamp;
+			//gyroAccelDATAToSend[i*10] =
+			//times[i] = i;
+			//End the timestamp to get the end time
+			kalmanEndTime = alt_timestamp();
+			//The timestamp is taken in ms
+			times[i] = (((float) (kalmanEndTime - kalmanBeginTime) * 20)/ 1000000);
+			printf("%f\n", times[i]);
+			printf("%i",sizeof(times[i]));
+		}
+
+		alt_8 *toSend_ptr;
+		toSend_ptr = (alt_8 *) gyroAccelDATAToSend;
+		float *toSend_ptr2 = (float *) times;
+		int bytes = 0;
+		//numSend = 0;
+		//Make sure that we send all of the values
+		//It is times 2 since we send the accelerometer, gyroscope, and magnetometer data
+		//seperately from the timestamp data
+		//while (numSend != NUM_SENSOR_VALUES) {
+//			printf("Waiting to send");
+//			//First we have to read an a or a b to know which piece of data we should be sending
+//			numRead = read(fd, readBuffer, READ_BUFFER_SIZE - 1);
+//			//if we read something, check to see if it is an a or a b
+//			if (numRead > 0) {
+//				//If we read an a send over the gyro, accel, and mag data
+//				if (readBuffer[0] == 'a') {
+				//printf("Trying to send");
+				//Write the data to bluetooth
+					//if (readBuffer[0] == 'c') {
+						/*int j;
+						for(j = 0; j < 1000; j++){
+							bytes = fwrite(toSend_ptr, 2, 1, fp);
+							toSend_ptr+=2;
+						}*/
+						//printf("\n\n%i", bytes);
+						//toSend_ptr = toSend_ptr + 2000;
+						numSend++;
+					//}
+					//printf("Sent = %d", numSent);
+					//Increment the pointer and numSend
+//					//Testing to see if this works
+					for(int j=0;j<200;j++){
+						fwrite(toSend_ptr2, 2, 1, fp);
+						toSend_ptr2 += 2;
+					}
+//					//Increment the pointer and numSend
+//					printf("Finished sending");
+//				}
+//			}
+//		}
+
+
+
+		wantData = 0;
+
+
+	}
+
+	return 0;
+}

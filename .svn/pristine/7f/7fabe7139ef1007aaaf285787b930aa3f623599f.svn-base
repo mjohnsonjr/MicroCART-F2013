@@ -1,0 +1,179 @@
+/*
+ * cli_microcart.cpp
+ *
+ *  Created on: Dec 9, 2013
+ *      Author: michael
+ */
+
+
+#define DEBUG_MODE
+#define CAMERA_DATA
+
+#include <sys/fcntl.h> /* File control definitions */
+#include <sys/termios.h>
+#include <termios.h> /* POSIX terminal control definitions */
+#include <unistd.h> /* UNIX standard function definitions */
+#include <cerrno> /* Error number definitions */
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <istream>
+#include <iterator>
+#include <vector>
+#include "QuadCommmand.h"
+#include "CommandInterpreter.h"
+
+
+/* The quad's mode of operation, up startup type following commands in
+ * MOVE: Allows for standard movement commands (set alt, adjust alt, set lat, adjust lat, set long, adjust long).
+ * CALIBRATION: Allows for calibrations commands, and setting adjustments
+ * TEST: Allows for testing commands, (commands such as "pitch, roll, yaw" for test purposes)
+ */
+
+/**
+ * TODO: List
+ *
+ * Read data back.
+ * Incorporate Camera Data and send that consistently.
+ *
+ */
+
+// Parsing, chopping carrots, each piece is separated by a "space"
+
+
+/* DEFINITIONS FOR ENUM/CLASSES, move in the future. */
+enum Mode{
+	MOVE,CALIBRATION,TEST
+};
+
+
+
+
+/* Prototypes (these can stay) */
+void executeCommand(struct QuadCommand &data, const int &quad_fd);
+void setupUART(int &fd);
+void fillCommandError(struct QuadCommand& data);
+
+
+/*
+ * Runs in a continuous loop taking user commands.
+ */
+int main(int argc, char** argv){
+
+	std::string inputString;
+
+	/* Setup UART */
+	int quad_fd = -1;
+	setupUART(quad_fd);
+
+	/* Setup interpreter */
+	CommandInterpreter interpreter;
+
+#ifdef DEBUG_MODE
+	interpreter.interpret("alt 123");
+	struct QuadCommand cmd(interpreter.getQuadCommand());
+	std::cerr << "Start Action: " << (short)cmd.action << " Data: " << cmd.values[0] << "\n";
+	std::cerr << "Packed: " << cmd.pack() << "\n";
+
+	struct QuadCommand cmd2 = QuadCommand::unpack(cmd.pack());
+	std::cerr << "Unpacked: " << (short)cmd2.action << " Data: " << cmd.values[0] << "\n";
+#endif
+
+	/* Continuously read user commands */
+	while(true){
+		/* Get user input from command line */
+		std::getline(std::cin, inputString);
+
+		/* Parse into data array, check handleCommand's return for validity */
+		if(interpreter.interpret(inputString)){
+			/* Execute the command */
+			//executeCommand(interpreter.getQuadCommand(), quad_fd);
+		}
+	}
+}
+
+
+
+/* Writes command to UART
+ *
+ *  Packed Data format: action, char representation of float value (to be determined units), termination char (-128).
+ *	Use the static unpack method to repack it into a struct.
+ *
+ */
+void executeCommand(struct QuadCommand data, const int &quad_fd){//TODO: FIX THE PARAMETERS
+
+	const std::string str = "OMGWTF\n";
+	const char* bytedata = str.c_str();//data.pack();
+
+	//std::cerr << "Equal?: "  << data.action << data.value << (char) -128 <<  " : " << bytedata << "\n";
+
+	short n = write(quad_fd, bytedata, 7);
+	std::cerr << "Wrote " << n << " of 7 bytes\n";
+
+	//delete bytedata;
+}
+
+
+
+/* Sets up the UART to write to (bluetooth)? */
+void setupUART(int &fd){
+
+	  fd = open("/dev/ttys0", O_RDWR | O_NDELAY);
+	  //fd = open("/dev/ttyS0", O_RDWR | O_NOCTTY | O_NDELAY);
+
+	  if (fd == -1)
+	  {
+	    //Could not open the port.
+	    perror("open_port: Unable to open /dev/ttyS0 - ");
+	    exit(1);
+	  }
+	  else
+	  {
+	  	fcntl(fd, F_SETFL, 0);
+	  }
+
+	  /* SET OPTIONS */
+	  	struct termios options; // UART port options data structure
+
+	    // Get the current options for the port...
+	    tcgetattr(fd, &options);
+
+	    // Set the baud rates to 115200...
+	    cfsetispeed(&options, B115200);
+	    cfsetospeed(&options, B115200);
+
+	    // Enable the receiver and set local mode...
+	    options.c_cflag |= (CLOCAL | CREAD);
+
+	    // Set charater size
+	    options.c_cflag &= ~CSIZE; // Mask the character size bits
+	    options.c_cflag |= CS8;    // Select 8 data bits
+
+	    // Set no parity 8N1
+	    options.c_cflag &= ~PARENB;
+	    options.c_cflag &= ~CSTOPB;
+	    options.c_cflag &= ~CSIZE;
+	    options.c_cflag |= CS8;
+
+	    // Disable Hardware flow control
+	    options.c_cflag &= ~CRTSCTS;
+
+	    // Use raw input
+	    options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
+
+	    // Disable SW flow control
+	    options.c_iflag &= ~(IXON | IXOFF | IXANY);
+
+	    // Use raw output
+	    options.c_oflag &= ~OPOST;
+
+	    // Set new options for the port...
+	    tcsetattr(fd, TCSANOW, &options);
+}
+
+void fillCommandError(struct QuadCommand& data){
+	data.action = -1;
+	data.values.resize(0);
+}
+
+

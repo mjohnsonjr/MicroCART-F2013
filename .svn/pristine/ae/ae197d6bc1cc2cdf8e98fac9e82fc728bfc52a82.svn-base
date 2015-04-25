@@ -1,0 +1,35 @@
+/*
+ * CommandInterpreter.h
+ *
+ *  Created on: Jan 23, 2014
+ *      Author: michael
+ */
+#include "QuadCommmand.h"
+#include <iostream>
+#include <vector>
+
+#ifndef COMMANDINTERPRETER_H_
+#define COMMANDINTERPRETER_H_
+
+class CommandInterpreter{
+
+	private:
+		struct QuadCommand command;
+		static const char translateAction(const std::string&);
+		static const std::vector<std::string> vectorize(const std::string&);
+
+	public:
+		CommandInterpreter();
+		~CommandInterpreter();
+		CommandInterpreter(const CommandInterpreter&);
+
+		bool interpret(const std::string&);
+		const struct QuadCommand getQuadCommand(){
+			return this->command;
+		}
+
+};
+
+
+
+#endif /* COMMANDINTERPRETER_H_ */

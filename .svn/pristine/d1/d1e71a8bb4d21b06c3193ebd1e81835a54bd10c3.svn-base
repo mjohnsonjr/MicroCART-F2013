@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MicroCART</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Controls_tab">
+     <attribute name="title">
+      <string>Controls</string>
+     </attribute>
+     <widget class="QPushButton" name="startButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>114</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>START</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="DebugConsole">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>290</y>
+        <width>571</width>
+        <height>251</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ConsoleLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>270</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Debug Console:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Execute_Button">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>50</y>
+        <width>114</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Execute</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ManualCommanLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>30</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ManualCommandLabel">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>10</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Manual Command:</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="Visuals_frame">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>100</y>
+        <width>191</width>
+        <height>421</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <widget class="QFrame" name="Heading_Frame">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>310</y>
+         <width>150</width>
+         <height>102</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>102</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>150</width>
+         <height>102</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_FS_Dir_N">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>N</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="Inner_heading_frame">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_FS_Dir_W">
+             <property name="minimumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>W</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGraphicsView" name="gView_FS_Dir">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="interactive">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_FS_E">
+             <property name="minimumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>E</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_FS_Dir_S">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>S</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QFrame" name="Pitch_Frame">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>150</y>
+         <width>150</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>150</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QGraphicsView" name="gView_FS_Pit">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>150</width>
+          <height>70</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>70</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>70</height>
+         </size>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_FS_Pit">
+        <property name="geometry">
+         <rect>
+          <x>6</x>
+          <y>3</y>
+          <width>40</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Pitch</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lEdit_FS_PitText">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>0</y>
+          <width>40</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="Y_groupBox">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>57</y>
+         <width>150</width>
+         <height>43</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>Y (Latitude)</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_19">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="Sensor_Current_Y">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>-&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Sensor_Target_Y">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="Z_groupBox">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>100</y>
+         <width>150</width>
+         <height>43</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>Z (Altitude)</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_17">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="Sensor_Current_Z"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>-&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Sensor_Target_Z">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QFrame" name="Roll_Frame">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>230</y>
+         <width>150</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>150</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QGraphicsView" name="gView_FS_Roll">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>150</width>
+          <height>70</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>70</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>70</height>
+         </size>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_FS_Roll">
+        <property name="geometry">
+         <rect>
+          <x>6</x>
+          <y>3</y>
+          <width>40</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Roll</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lEdit_FS_RollText">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>0</y>
+          <width>40</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="X_groupBox">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>14</y>
+         <width>150</width>
+         <height>43</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>X (longitude)</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_18">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="Sensor_Current_X">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>-&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Sensor_Target_X">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="Controls_frame">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>391</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <widget class="QLabel" name="LongitudeLabel">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>110</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Longitude (cm):</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="LatitudeSpinbox">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>80</y>
+         <width>49</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-300</number>
+       </property>
+       <property name="maximum">
+        <number>300</number>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="LongitudeSpinbox">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>110</y>
+         <width>49</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-300</number>
+       </property>
+       <property name="maximum">
+        <number>300</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Altitudelabel">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>50</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Altitude (cm):</string>
+       </property>
+      </widget>
+      <widget class="QSlider" name="AltitudeSlider">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>50</y>
+         <width>160</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-300</number>
+       </property>
+       <property name="maximum">
+        <number>300</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="LatitudeSlider">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>80</y>
+         <width>160</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-300</number>
+       </property>
+       <property name="maximum">
+        <number>300</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="LatitudeLabel">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>80</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Latitude (cm):</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="ManualThrottlespinBox">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>20</y>
+         <width>49</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="singleStep">
+        <number>5</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Apply_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>243</x>
+         <y>140</y>
+         <width>121</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Apply Changes</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="ManualThrottle_checkBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Manual Throttle:</string>
+       </property>
+      </widget>
+      <widget class="QSlider" name="horizontalSlider">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>20</y>
+         <width>160</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="AltitudeSpinbox">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>50</y>
+         <width>49</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-300</number>
+       </property>
+       <property name="maximum">
+        <number>300</number>
+       </property>
+      </widget>
+      <widget class="QSlider" name="LongitudeSlider">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>110</y>
+         <width>160</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>-300</number>
+       </property>
+       <property name="maximum">
+        <number>300</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Settings_tab">
+     <attribute name="title">
+      <string>Settings</string>
+     </attribute>
+     <widget class="QCheckBox" name="Camera_checkbox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Use Camera System</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Options_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>62</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Options:</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="Control_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>70</y>
+        <width>111</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Control Mode:</string>
+      </property>
+      <widget class="QRadioButton" name="Manual_button">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>102</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Manual</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="Auto_button">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>102</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Auto</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="Devices_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>20</y>
+        <width>331</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Devices and Locations:</string>
+      </property>
+      <widget class="QLineEdit" name="Bluetooth_addr">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>30</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>/dev/ttyUSB0</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Camera_ip_addr">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>60</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>192.168.0.120:3883</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Bluetooth_label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Bluetooth:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Camera_ip_label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>91</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>VRPN Server:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Log_Output_label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>151</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Log Output File Name:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Log_output_text">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>90</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>output.txt</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ManualThrottlespinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>653</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>745</x>
+     <y>81</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ManualThrottlespinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>741</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>704</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AltitudeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>AltitudeSpinbox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>704</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>739</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LatitudeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LatitudeSpinbox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>688</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>738</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LongitudeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LongitudeSpinbox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>710</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>745</x>
+     <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AltitudeSpinbox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>AltitudeSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>757</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>699</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LatitudeSpinbox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LatitudeSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>738</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>690</x>
+     <y>132</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LatitudeSpinbox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LatitudeSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>741</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>706</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LongitudeSpinbox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>LongitudeSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>744</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>712</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,122 @@
+/*
+ * CLI.cpp
+ *
+ *  Created on: Feb 5, 2014
+ *      Author: michael
+ */
+
+#define CAMERA_DATA
+#define USE_PTHREAD
+
+#include "CLI.h"
+#include <cerrno>
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <istream>
+#include <iterator>
+#include <vector>
+#include <thread>
+#include <pthread.h>
+#include "QuadCommand.h"
+#include "CommandInterpreter.h"
+#include "Locator.h"
+#include "Transmitter.h"
+
+namespace{
+
+	void* cli_mainloop(void* cli){
+
+		((CLI*)cli)->mainloop();
+#ifdef USE_PTHREAD
+		pthread_exit(NULL);
+#endif
+	}
+}
+
+CLI::CLI() {
+
+		/* Setup UART communication */
+		this->transmitter = new Transmitter("/dev/ttyUSB0");
+		this->interpreter = new CommandInterpreter();
+		this->running = false;
+		this->main_thread = NULL;
+
+		/* Setup Camera data reading */
+#ifdef CAMERA_DATA
+		this->locator = new CameraLocation("192.168.0.120:3883", *this->interpreter, *this->transmitter);
+#endif
+}
+
+CLI::~CLI() {
+	delete this->interpreter;
+	delete this->locator;
+	delete this->main_thread;
+}
+
+/**
+ * Beings the CLI, can't be stopped :D
+ */
+bool CLI::start(){
+
+	/* Enable tx and rx on the transmitter (bluetooth) */
+	this->transmitter->enableTx();
+	this->transmitter->enableRx();
+
+
+#ifdef CAMERA_DATA
+	this->locator->startTracking();
+#endif
+
+	/* CLI is running */
+	this->running = true;
+
+	/* Start runner thread
+	 * TODO: CHECK THESE THREADS (NEVER HAVE) */
+#ifdef USE_PTHREAD
+	pthread_create(&this->main_thread, NULL, cli_mainloop, (void*)this);
+#else
+	this->main_thread = new std::thread(cli_mainloop, (void*)this);
+#endif
+
+	return true;
+}
+
+
+/**
+ * Stops the CLI, and performs any termination conditions.
+ * Throttle to 0.
+ */
+bool CLI::stop(){
+	this->running = false;
+	this->interpreter->getQuadCommand().setAutoThrottle(false);
+	this->interpreter->getQuadCommand().setManualThrottle(0.0);
+
+	return true;
+}
+
+/**
+ * THREADED!
+ * Program's mainloop, allows to be killed, and have termination conditions after being killed.
+ * For example, throttle to 0, etc.
+ */
+void CLI::mainloop(){
+
+	std::string inputString;
+
+		/* Continuously read user commands */
+		while(this->running){
+			/* Get user input from command line */
+			std::getline(std::cin, inputString);
+
+			/* Parse into data array, check handleCommand's return for validity */
+			if(this->interpreter->interpret(inputString)){
+
+				/* Execute the command */
+				/*if(!this->transmitter->transmitCommand(this->interpreter->getQuadCommand())){
+					std::cerr << "Error in send!\n";
+				}*/
+			}
+		}
+}
+
